@@ -133,3 +133,13 @@ export const updateProfile=async(req , res)=>{
     };
     
 };
+
+export const checkAuth=(req , res)=>{
+  try{
+     res.status(200).json({user:req.user});
+    
+  }catch(error){
+    res.status(500).json({message:"error in check auth controller" , error:error.message});
+    console.log("error in check auth controller" , error.message);
+  }
+}
